@@ -184,7 +184,6 @@ function updateUI() {
 
   // 제출 버튼 표시 여부
   submitButton.style.display =
-
     (userAnswers[currentQuestion] !== -1) &
     (currentQuestion == quizData.length - 1)
       ? 'block'
@@ -317,7 +316,6 @@ nextButton.addEventListener('click', () => {
   }
 });
 
-
 submitButton.addEventListener('click', () => {
   submitQuiz();
 });
@@ -356,7 +354,6 @@ window.deleteQuestion = function (index) {
   loadQuestionsInEdit();
 };
 
-
 // 새 문제 추가 기능
 function addNewQuestion() {
   const questionText = newQuestionInput.value.trim();
@@ -380,7 +377,6 @@ function addNewQuestion() {
     return;
   } else {
     alert('문제가 추가되었습니다.');
-
   }
 
   const newQuestion = {
@@ -453,52 +449,6 @@ document.addEventListener('DOMContentLoaded', () => {
     quizData.splice(index, 1);
     loadQuestionsInEdit();
   };
-
-
-  // 새 문제 추가 기능
-  function addNewQuestion() {
-    const questionText = newQuestionInput.value.trim();
-    const options = [
-      newOption1.value.trim(),
-      newOption2.value.trim(),
-      newOption3.value.trim(),
-      newOption4.value.trim(),
-    ];
-    const answerIndex = parseInt(newAnswer.value);
-    const explanationText = newExplanation.value.trim();
-
-    if (
-      !questionText ||
-      options.some((opt) => !opt) ||
-      isNaN(answerIndex) ||
-      answerIndex < 0 ||
-      answerIndex > 3
-    ) {
-      alert('모든 필드를 올바르게 입력해주세요.');
-      return;
-    }
-
-    const newQuestion = {
-      question: questionText,
-      options,
-      answer: answerIndex,
-      explanation: explanationText,
-    };
-
-    quizData.push(newQuestion);
-
-    // 입력 폼 초기화
-    newQuestionInput.value = '';
-    newOption1.value = '';
-    newOption2.value = '';
-    newOption3.value = '';
-    newOption4.value = '';
-    newAnswer.value = '';
-    newExplanation.value = '';
-
-    loadQuestionsInEdit();
-  }
-
 
   // 화면 전환 함수
   function showMainMenu() {
