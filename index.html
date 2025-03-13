@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹 개발 미니 퀴즈</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main-menu">
+      <h1>MINI QUIZ</h1>
+      <div id="button-container">
+        <button id="start-quiz-btn">퀴즈 시작</button>
+        <button id="edit-quiz-btn">문제 편집</button>
+        <button id="delete-quiz-btn" class="hide">기존 문제 삭제</button>
+        <button id="add-quiz-btn" class="hide">새로운 문제 추가</button>
+        <button id="go-back-btn" class="hide">뒤로 가기</button>
+      </div>
+    </div>
+
+    <div id="quiz-wrapper">
+      <div id="go-back-small-btn" class="hide">⬅︎</div>
+      <div class="quiz-container">
+        <div id="quiz-header">
+          <h1>웹 개발 미니 퀴즈</h1>
+        </div>
+
+        <div id="quiz">
+          <div id="question"></div>
+          <div id="options" class="options-container"></div>
+          <div id="result-message"></div>
+          <div class="button-container">
+            <button id="prev-btn" class="navigation-btn">이전 문제</button>
+            <button id="next-btn" class="navigation-btn">다음 문제</button>
+            <button id="submit-btn" class="submit-btn hide">정답 확인</button>
+            <button id="restart-btn" class="restart-btn">최종 결과 확인</button>
+          </div>
+        </div>
+
+        <div id="results" class="hide">
+          <h2>퀴즈 결과</h2>
+          <p id="score-container">
+            총점: <span id="score"></span>/<span id="total"></span>
+          </p>
+          <div id="summary_button">
+            <button id="show-all-btn" class="restart-btn">전체보기</button>
+            <button id="show-correct-btn" class="restart-btn">
+              맞은 문제 보기
+            </button>
+            <button id="show-incorrect-btn" class="restart-btn">
+              틀린 문제 보기
+            </button>
+          </div>
+
+          <div id="summary"></div>
+          <button id="retry-btn" class="restart-btn">다시 풀기</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 문제 바로 이동 -->
+    <div class="side-container hide">
+      <div class="countdown-container">
+        <div id="timer-title">남은 시간</div>
+        <div class="timer-circle"></div>
+        <div id="timer">10</div>
+      </div>
+      <div class="question-selector">
+        <div id="title">문항 선택</div>
+        <div id="content"></div>
+      </div>
+      <div id="final-submit-btn">
+        <div id="btn-title">제출하기</div>
+      </div>
+    </div>
+
+    <!-- 문제 삭제 화면 -->
+    <div id="edit-container" class="quiz-container hide">
+      <div id="quiz-header">
+        <h1>기존 문제 삭제</h1>
+      </div>
+      <div id="edit-quiz">
+        <div id="question-list-edit"></div>
+
+        <button class="back-to-menu-btn">메뉴로 돌아가기</button>
+      </div>
+    </div>
+
+    <!-- 문제 추가 화면 -->
+    <div id="add-container" class="quiz-container hide">
+      <div id="quiz-header">
+        <h1>새 문제 추가</h1>
+      </div>
+      <div id="add-quiz">
+        <div id="new-question-input-container">
+          <input type="text" id="new-question" placeholder="문제 입력" />
+          <input type="text" id="new-option1" placeholder="보기 1" />
+          <input type="text" id="new-option2" placeholder="보기 2" />
+          <input type="text" id="new-option3" placeholder="보기 3" />
+          <input type="text" id="new-option4" placeholder="보기 4" />
+          <input type="number" id="new-answer" placeholder="정답 번호 (1~4)" />
+          <textarea id="new-explanation" placeholder="해설 입력"></textarea>
+        </div>
+        <button id="save-question-btn">저장</button>
+        <button class="back-to-menu-btn">메뉴로 돌아가기</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
